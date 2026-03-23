@@ -1,0 +1,25 @@
+// Sacco.java
+import java.util.Scanner;
+
+public class Sacco {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Enter member name: ");
+        String memberName = input.nextLine();
+
+        System.out.print("Enter member ID: ");
+        String memberId = input.nextLine();
+
+        double[] contributions = new double[6];
+        double totalSavings = 0;
+
+        for (int i = 0; i < 6; i++) {
+            System.out.print("Enter contribution for month " + (i+1) + ": ");
+            contributions[i] = input.nextDouble();
+            totalSavings += contributions[i];
+        }
+
+        System.out.println("Total savings for " + memberName + " (" + memberId + "): " + totalSavings + " KES");
+    }
+}
